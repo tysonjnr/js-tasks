@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       let today = new Date();
+        let birthDate = new Date("1999, 5, 16");
+        let years = today.getFullYear() - birthDate.getFullYear();
+        let months = today.getMonth() - birthDate.getMonth();
+        let days = birthDate.getDate()-today.getDate() ;
+        console.log(`You are ${years} years, ${months} months, and ${days} days old.`);
+    </script>
+</body>
+</html>

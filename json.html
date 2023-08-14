@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis molestiae cupiditate alias veniam ullam autem quis reiciendis perferendis aspernatur eligendi ea, nisi eveniet vitae fugiat earum error vero incidunt labore.</p>
+    <script>
+        //when an array is too big, accesing data using index is imposible.
+        //json objects stores values in keys
+        let data= {"name":"tyson","age":"80","car":"subaru"}
+        console.log(data.age);
+        console.log(data.car);
+
+        //create an object that would be used to store voter
+        //registration details from IEBC.Ensure you have name,county,subcounty,ward.
+        //The object should be able to accomodate 18million voters.Add atleast 3 voters.
+         let voters={
+        "voter1": { "name":"James", "county":"Nrb", "subcounty":"Umoja", "Ward":"Krj"},
+        "voter2": { "name":"Jux", "county":"Msa", "subcounty":"Kit", "Ward":"Uhg"},
+       "voter3": { "name":"Ann", "county":"Eld", "subcounty":"Kgm", "Ward":"Ubg"}
+         }
+       console.log(voters.voter1);
+       console.log(voters.voter2);
+
+       let voter_1={
+        name: "Tyson", age: "58", location: "Kasarani"
+       }
+    console.log(voter_1.age);
+    
+
+    let person = {
+            "first_name" : "John",
+            "last_name"  : "Doe",
+            "age" : 30,
+            "locations" : ["Nrb","Msa","Ktl","Kti"],
+            "kins" : [{"name":"Mary","phone":"0725352"},
+                      {"name":"Tom","phone":"0725352123"}
+                     ]
+        }
+        console.log(person["kins"][1]["name"])
+       
+
+
+    </script>
+    
+</body>
+</html>
