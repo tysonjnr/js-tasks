@@ -19,7 +19,7 @@ to find the gross salary then uses the gross salary to find the NHIF.
 
         if (gross_salary <= 5999) {
             NHIF_contribution = 150
-                ;
+                
         } else if (gross_salary >= 6000 && gross_salary <= 7999) {
             NHIF_contribution = 300
         } else if (gross_salary >= 8000 && gross_salary <= 11999) {
@@ -68,6 +68,19 @@ to find the gross salary then uses the gross salary to find the NHIF.
         console.log("Your gross salary is: " + gross_salary);
         console.log("Your NHIF contribution is: " + NHIF_contribution);
         
+       let tax = 0.06
+       if(gross_salary <= 18000){
+       nssf_contibution = Number(gross_salary) *Number(tax)
+       }else{
+        nssf_contribution = 18000 *tax
+    }
+    console.log("Your Nssf contribution is: " + nssf_contribution)
+        /*To calculate the Employees Payee, you need to find the gross salary first then find the
+taxable income (this is the gross salary less the NHIF value)
+i.e taxable_income = gross salary - NSSF
+Continue with the same program and find the person's PAYEE .
+Find the Kenya PAYEE Tax Rate using THIS LINK*/
+
     </script>
 </body>
 </html>
