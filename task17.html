@@ -8,16 +8,16 @@
 <body>
     <script>
         //grossSalary
-         function gross(basic, benefits) {
+         function getgross(basic, benefits) {
             basic = parseFloat(prompt("Enter your basic salary: "));
             benefits = parseFloat(prompt("Enter your benefits: "));
             return basic + benefits
         }
-        let grossSalary = gross()
+        let grossSalary = getgross()
         console.log("gross salary is :", grossSalary)
         
         //NSSF
-        function NSSF(grossSalary, NSSF_RATE) {
+        function getNSSF(grossSalary, NSSF_RATE) {
             if (grossSalary <= 18000) {
                 let NSSF = (grossSalary * 0.06)
             } else {
@@ -25,15 +25,15 @@
             }
             return NSSF
         }
-        let Nssf = NSSF()
+        let Nssf = getNSSF()
         console.log("nssf is", Nssf)
 
         //NHDF
-        function NHDF() {
-            NHDFrate = 0.015
+        function getNHDF() {
+           let NHDFrate = 0.015
             return grossSalary * NHDFrate
         }
-        let nhdf = NHDF()
+        let nhdf = getNHDF()
         console.log("Nhdf is", nhdf)
 
        //TaxIncome
@@ -46,7 +46,7 @@
         
         //Payee
         //i.e tax=4483+(taxable income-32333) * 0.3
-        function Calculate_payee() {
+        function getpayee() {
             if (taxIncome <= 24000 ) {
                  Payee = (taxIncome * 0.01)
             } else if (taxIncome > 24000 && taxIncome <= 32333) {
@@ -57,11 +57,11 @@
             }
             return Payee
         }
-        let PAYEE = Calculate_payee()
+        let PAYEE = getpayee()
         console.log("payee is ",PAYEE)
 
         //NHIF
-        function Calc_NHIF(){
+        function getNHIF(){
             if (grossSalary <= 5999) {
             NHIF_contribution = 150
         } else if (grossSalary >= 6000 && grossSalary <= 7999) {
@@ -110,8 +110,18 @@
         }
         return NHIF_contribution
     }
-    let nhif=Calc_NHIF()
-    console.log("Your NHIF is: ", nhif)
+    let nhif=getNHIF()
+    console.log("NHIF is: ", nhif)
+    //net_salary
+  //net_salary = gross_salary - (nhif + nssf + payee)
+
+  function get_net(){
+    let net = grossSalary - (PAYEE+Nssf+nhif)
+    return net
+  }
+let netsalary=get_net()
+console.log("Net salary is: ", netsalary)
+
        
     </script>
 </body>
