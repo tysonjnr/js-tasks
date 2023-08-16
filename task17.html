@@ -7,52 +7,61 @@
 </head>
 <body>
     <script>
-         function gross_salary(basic_salary, benefits) {
-            basic_salary = parseFloat(prompt("Enter your basic salary: "));
+        //grossSalary
+         function gross(basic, benefits) {
+            basic = parseFloat(prompt("Enter your basic salary: "));
             benefits = parseFloat(prompt("Enter your benefits: "));
-            return basic_salary + benefits
+            return basic + benefits
         }
-        let grossSalary = gross_salary()
+        let grossSalary = gross()
         console.log("gross salary is :", grossSalary)
-
-        function NHDF() {
-            NHDF_rate = 0.015
-            return grossSalary * NHDF_rate
-        }
-        let Nhdf = NHDF()
-        console.log("Nhdf is", NHDF())
+        
+        //NSSF
         function NSSF(grossSalary, NSSF_RATE) {
             if (grossSalary <= 18000) {
                 let NSSF = (grossSalary * 0.06)
             } else {
                 NSSF = (18000 * 0.06)
-
             }
             return NSSF
         }
         let Nssf = NSSF()
         console.log("nssf is", Nssf)
 
+        //NHDF
+        function NHDF() {
+            NHDFrate = 0.015
+            return grossSalary * NHDFrate
+        }
+        let Nhdf = NHDF()
+        console.log("Nhdf is", NHDF())
+
+       //TaxIncome
         function TaxIncome() {
             let totalIncome = (grossSalary) - (Nssf + Nhdf);
             return totalIncome
         }
         let taxIncome = TaxIncome()
         console.log("taxable income is ", taxIncome)
+        
+        //Payee
+        //i.e tax=4483+(taxable income-32333) * 0.3
         function Calculate_payee() {
-            // let Payee = 0
-            if (taxIncome >= 24000) {
+            if (taxIncome >= 24000 ) {
                  Payee = (taxIncome * 0.01)
-            } else if (taxIncome > 24000 && gross_salary <= 32333) {
-                 Payee = (taxIncome * 0.25)
+            } else if (taxIncome > 24000 && taxIncome <= 32333) {
+                 Payee = (8333 * 0.25) + 2400
             } else {
-                 Payee = (taxIncome * 0.3)
+                 Payee = 4483+(taxIncome-32333) * 0.3
 
             }
             return Payee
         }
         let PAYEE = Calculate_payee()
         console.log("payee is ",PAYEE)
+
+        //Net_salary
+       
     </script>
 </body>
 </html>
